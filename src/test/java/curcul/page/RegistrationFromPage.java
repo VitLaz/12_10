@@ -2,6 +2,7 @@ package curcul.page;
 
 import com.codeborne.selenide.SelenideElement;
 import curcul.page.component.Calendar;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -30,7 +31,7 @@ public class RegistrationFromPage {
 
 
 
-
+    @Step("Открываем страницу")
     public RegistrationFromPage openPage () {
         open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");

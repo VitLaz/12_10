@@ -3,6 +3,7 @@ package guru.qa.test;
 import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
 import curcul.page.RegistrationFromPage;
+import curcul.test.TestBase;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,7 @@ import java.util.Locale;
 
 import static java.lang.String.format;
 
-public class RegistretionFormTest {
+public class RegistretionFormTest extends TestBase {
     Faker faker = new Faker();
 
     String firstName = faker.name().firstName(),
@@ -31,13 +32,6 @@ public class RegistretionFormTest {
     String expectedFullName = format("%s %s", firstName, lastName);
     String expectedBirthdayDate = format("%s %s,%s",day, month,year);
     String expectedStateAndCity = format("%s %s", state, city);
-
-
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-    }
 
     @Test
     public void registrationFromTest () {
