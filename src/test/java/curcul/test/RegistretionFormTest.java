@@ -5,6 +5,7 @@ import com.github.javafaker.Faker;
 import curcul.page.RegistrationFromPage;
 import curcul.test.TestBase;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Locale;
@@ -34,6 +35,7 @@ public class RegistretionFormTest extends TestBase {
     String expectedStateAndCity = format("%s %s", state, city);
 
     @Test
+    @DisplayName("Проверка формы регистрации")
     public void registrationFromTest () {
         RegistrationFromPage page = new RegistrationFromPage();
         page.openPage()
